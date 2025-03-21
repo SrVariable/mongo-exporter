@@ -23,6 +23,8 @@ services:
       - 8080:8080
     networks:
       - mongo-exporter-network
+    environment:
+      - MONGO_URI=mongodb://database:27017
 
 #Docker Networks
 networks:

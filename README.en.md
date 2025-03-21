@@ -8,6 +8,8 @@ This project consists in a Metric Collection System for a database to monitor th
 |-|-|-|
 |`GET`|`/v1/healthcheck`|Get the health status of the API|
 |`GET`|`/v1/hello`|Get "hello world" message|
+|`GET`|`/v1/metrics`|Get a list of metrics|
+|`GET`|`/v1/metrics/:name`|Get a metric by name|
 |`GET`|`/v1/students`|Get a list of all students|
 |`GET`|`/v1/students/:id`|Get a student by ID|
 
@@ -37,13 +39,15 @@ make
 > ```
 
 Once it's built, you can interact with the API using your browser, curl, or any method you prefer.
-- To get a list of every student:
+
+- To get a list of metrics:
 ```
-curl localhost:8080/v1/students
+curl localhost:8080/v1/metrics
 ```
-- To get the student by ID:
+
+- To get the amount of inserts to a database
 ```
-curl localhost:8080/v1/students/1
+curl localhost:8080/v1/metrics/insert
 ```
 
 Check [API Endpoints](#api-endpoints) to see available endpoints.
@@ -57,3 +61,7 @@ Check [API Endpoints](#api-endpoints) to see available endpoints.
 - https://stackoverflow.com/questions/33322103/multiple-froms-what-it-means
 - https://stackoverflow.com/questions/75973805/creating-dockerfile-for-golang-web-application
 - https://www.docker.com/blog/developing-go-apps-docker/
+- https://pkg.go.dev/go.mongodb.org/mongo-driver/v2/mongo
+- https://www.youtube.com/watch?v=bDWApqAUjEI
+- https://www.youtube.com/watch?v=g7cNQB2kCgE
+- https://www.mongodb.com/docs/manual/reference/command/serverStatus/
