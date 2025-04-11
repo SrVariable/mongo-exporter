@@ -1,0 +1,12 @@
+# https://stackoverflow.com/questions/54813704/how-to-add-dashboard-configuration-json-file-in-grafana-image
+apiVersion: 1
+
+providers:
+- name: 'default'
+  orgId: 1
+  folder: ''
+  type: file
+  disableDeletion: false
+  updateIntervalSeconds: 10
+  options:
+    path: /etc/grafana/provisioning/dashboards
