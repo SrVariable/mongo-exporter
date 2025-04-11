@@ -1,0 +1,22 @@
+name: CI
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: '1.24.1'
+
+      - name: Build Mongo Exporter
+        run: go build ./cmd/mongo-exporter
+
+      - name: Check formatting
+        run: |
+          go fmt ./...
+          git diff --exit-code
