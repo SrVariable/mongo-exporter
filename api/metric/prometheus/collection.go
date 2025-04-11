@@ -36,7 +36,6 @@ var (
 func RecordCollection(ms *service.MetricService) {
 	go func() {
 		for {
-
 			collection, err := ms.FindCollection(context.Background(), dbName, collName)
 			if err != nil {
 				log.Printf("Error retrieving Collection metrics: %v", err)
@@ -46,7 +45,7 @@ func RecordCollection(ms *service.MetricService) {
 				collUpdate.Set(float64(collection.Update.Value))
 				collQueries.Set(float64(collection.Queries.Value))
 			}
-			time.Sleep(2 * time.Second)
+			time.Sleep(1 * time.Second)
 		}
 	}()
 }

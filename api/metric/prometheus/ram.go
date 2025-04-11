@@ -33,7 +33,7 @@ func RecordRam(ms *service.MetricService) {
 				resident.Set(float64(ram.Resident.Value))
 				virtual.Set(float64(ram.Virtual.Value))
 			}
-			time.Sleep(2 * time.Second)
+			time.Sleep(1 * time.Second)
 		}
 	}()
 }
