@@ -42,7 +42,7 @@ func RecordOpCounters(ms *service.MetricService) {
 				update.Set(float64(opcounters.Update.Value))
 				query.Set(float64(opcounters.Query.Value))
 			}
-			time.Sleep(2 * time.Second)
+			time.Sleep(1 * time.Second)
 		}
 	}()
 }

@@ -41,7 +41,7 @@ func RecordConnections(ms *service.MetricService) {
 				totalCreated.Set(float64(connections.TotalCreated.Value))
 				active.Set(float64(connections.Active.Value))
 			}
-			time.Sleep(2 * time.Second)
+			time.Sleep(1 * time.Second)
 		}
 	}()
 }
